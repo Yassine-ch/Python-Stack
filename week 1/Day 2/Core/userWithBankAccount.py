@@ -39,13 +39,12 @@ class User:
         print(f"Name: {self.name}, {self.account.display_account_info()}")
         return self
 
-rachel = User("Rachel","rachelp5446@gmail.com")
-kilo = User("Kilo","kilo@dogmail.com")
-kenobi = User("Kenobi","kenobi@dogmail.com")
+Demo = User("Demo","Demo@gmail.com")
+yassine = User("yassine","yassine@dogmail.com")
 
-kenobi.account.deposit(100)
-kenobi.display_account_info()
-rachel.account.deposit(500)
-rachel.display_account_info()
-rachel.transfer_money(500,kenobi)
-kilo.account.deposit(100).withdraw(50).display_account_info()
+yassine.account.deposit(100)
+yassine.display_account_info()
+Demo.account.deposit(500)
+
+yassine.transfer_money(500,Demo)
+Demo.account.deposit(100).withdraw(50).display_account_info()
