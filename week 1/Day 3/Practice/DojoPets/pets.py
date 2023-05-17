@@ -28,6 +28,7 @@ class Pet:
         return self
 #!!!!! CLASS DOG____FROM PET
 class Dog(Pet):
-    def __init__(self, name, pet_type, tricks, is_hypoallergenic):
+    def __init__(self, name, pet_type, tricks, breed, is_hypoallergenic):
         super().__init__(name, pet_type, tricks)
+        self.breed = breed
         self.is_hypoallergenic = is_hypoallergenic

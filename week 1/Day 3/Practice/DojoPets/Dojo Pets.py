@@ -15,3 +15,8 @@ print(pet_1.health, pet_1.energy,pet_1.name)
 
 #INSTANCE_OF_DOG_(A CHILD_CLASS_OF_PET)
 dog_1 = pets.Dog("Juneau", "dog", ["sit"], "Alaskian Malamute", False)
+
+
+print(dog_1.name)
+print(dog_1.tricks)
+print(dog_1.type)
