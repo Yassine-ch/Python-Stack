@@ -1,0 +1,21 @@
+/**create names 
+CREATE TABLE IF NOT EXISTS `names`.`names` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `created_at` DATETIME NULL,
+  `update_at` DATETIME NULL,
+  PRIMARY KEY (`id`))
+
+
+/** select all the names in the dataase **/
+SELECT * FROM names;
+
+/*insert my name in the database*/
+
+INSERT INTO names (name,created_at,updated_at)
+VALUES ('YASSINE'2023-05-23 05:39:59,2023-05-23 05:39:59);
+
+
+/**insert other name in the database**/
+INSERT INTO names (name,created_at,updated_at)
+VALUES ('NINJA'2023-05-23 05:39:59,2023-05-23 05:39:59);
