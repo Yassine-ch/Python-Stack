@@ -1,0 +1,42 @@
+/** create table **
+CREATE TABLE IF NOT EXISTS `dojos_and_ninjas_schema`.`dojos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `created_at` DATETIME NULL,
+  `updated_at` DATETIME NULL,
+  `dojoscol` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+/** insert 3 dojos**//
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Dojo 1', NOW(), NOW()),
+       ('Dojo 2', NOW(), NOW()),
+       ('Dojo 3', NOW(), NOW());
+/**Delete the 3 dojos you just created
+DELETE FROM dojos WHERE id < 4 ;
+/**Create 3 more dojos
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Dojo 4', NOW(), NOW()),
+       ('Dojo 5', NOW(), NOW()),
+       ('Dojo 6', NOW(), NOW());
+/**Create 3 ninjas that belong to the first dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('Ninja 1', 'Lastname', 20, NOW(), NOW(), 1),
+       ('Ninja 2', 'Lastname', 22, NOW(), NOW(), 1),
+       ('Ninja 3', 'Lastname', 24, NOW(), NOW(), 1);
+/**Create 3 ninjas that belong to the second dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('Ninja 4', 'Lastname', 21, NOW(), NOW(), 2),
+       ('Ninja 5', 'Lastname', 23, NOW(), NOW(), 2),
+       ('Ninja 6', 'Lastname', 25, NOW(), NOW(), 2);
+/**Create 3 ninjas that belong to the third dojo
+INSERT INTO ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+VALUES ('Ninja 7', 'Lastname', 22, NOW(), NOW(), 3),
+       ('Ninja 8', 'Lastname', 24, NOW(), NOW(), 3),
+       ('Ninja 9', 'Lastname', 26, NOW(), NOW(), 3);
+/**Retrieve all the ninjas from the first dojo
+SELECT * FROM ninjas WHERE dojo_id = 1;
+
+/**Retrieve all the ninjas from the last dojo
+SELECT * FROM ninjas WHERE dojo_id = (SELECT MAX(id) FROM dojos);
+/**Retrieve the last ninja's dojo
+SELECT d.* FROM dojos AS d INNER JOIN ninjas AS n ON d.id = n.dojo_id ORDER BY n.id DESC LIMIT 1;
