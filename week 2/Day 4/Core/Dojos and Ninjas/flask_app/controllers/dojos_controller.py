@@ -6,7 +6,7 @@ from flask_app.models.dojos_model import Dojo
 
 
 # route to the dojos page
-@app.route("/dojos")
+@app.route("/")
 def dojos():
     print("dojo query")
     dojos = Dojo.get_all()
